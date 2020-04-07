@@ -1,7 +1,5 @@
 from pages.base_page import Page
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 
 
@@ -39,9 +37,4 @@ class RegistrationPage(Page):
             data_to_fill += 1
 
     def click_create_account(self):
-        field_list = self.driver.find_elements(*self.INPUT_LIST)
-        for field in field_list:
-            d = field.get_attribute('value')
-            print(field.get_attribute('value'))
-        sleep(4)
         self.click(*self.CREATE_ACCOUNT_BUTTON)

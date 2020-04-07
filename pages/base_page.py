@@ -39,10 +39,6 @@ class Page:
         actual_text = self.driver.find_element(*locator).text
         assert expected_text == actual_text, f'Expected text {expected_text}, but got {actual_text}'
 
-    # def verify_title(self, actual_text: str, expected_text: str):
-    #     # actual_text = self.driver.find_element(*locator).text
-    #     assert expected_text == actual_text, f'Expected text {expected_text}, but got {actual_text}'
-
     def count_elements(self, expected_value: int, *locator):
         actual_value = int(len(self.driver.find_elements(*locator)))
         assert actual_value == int(expected_value), f'Expected {expected_value} elements, but got {actual_value} elements'
